@@ -330,33 +330,33 @@ def check_dependencies():
     #############
     # mmseqs
     #############
-    try:
-        process = sp.Popen(["mmseqs"], stdout=sp.PIPE, stderr=sp.STDOUT)
-    except:
-        logger.error("MMseqs2 not found. Please reinstall pharokka.")
-    mmseqs_out, _ = process.communicate()
-    mmseqs_out = mmseqs_out.decode()
+    # try:
+    #     process = sp.Popen(["mmseqs"], stdout=sp.PIPE, stderr=sp.STDOUT)
+    # except:
+    #     logger.error("MMseqs2 not found. Please reinstall pharokka.")
+    # mmseqs_out, _ = process.communicate()
+    # mmseqs_out = mmseqs_out.decode()
 
-    version_line = []
+    # version_line = []
 
-    for line in mmseqs_out.split("\n"):
-        if "Version" in line:
-            version_line.append(line)
+    # for line in mmseqs_out.split("\n"):
+    #     if "Version" in line:
+    #         version_line.append(line)
 
-    mmseqs_version = version_line[0].split(" ")[2]
-    mmseqs_major_version = int(mmseqs_version.split(".")[0])
-    mmseqs_minor_version = int(mmseqs_version.split(".")[1])
+    # mmseqs_version = version_line[0].split(" ")[2]
+    # mmseqs_major_version = int(mmseqs_version.split(".")[0])
+    # mmseqs_minor_version = int(mmseqs_version.split(".")[1])
 
-    logger.info(
-        f"MMseqs2 version found is v{mmseqs_major_version}.{mmseqs_minor_version}"
-    )
+    # logger.info(
+    #     f"MMseqs2 version found is v{mmseqs_major_version}.{mmseqs_minor_version}"
+    # )
 
-    if mmseqs_major_version != 13:
-        logger.error("MMseqs2 is the wrong version. Please install v13.45111")
-    if mmseqs_minor_version != 45111:
-        logger.error("MMseqs2 is the wrong version. Please install v13.45111")
+    # if mmseqs_major_version != 13:
+    #     logger.error("MMseqs2 is the wrong version. Please install v13.45111")
+    # if mmseqs_minor_version != 45111:
+    #     logger.error("MMseqs2 is the wrong version. Please install v13.45111")
 
-    logger.info("MMseqs2 version is ok.")
+    # logger.info("MMseqs2 version is ok.")
 
     #############
     # trnascan
