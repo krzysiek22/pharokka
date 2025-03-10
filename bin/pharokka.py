@@ -119,6 +119,8 @@ def main():
         gene_predictor = "genbank"
         input_fasta = f"{out_dir}/genbank.fasta"
     else:
+        print(f"Debug Pharokka: sprawdzam katalog {os.path.dirname(args.infile)}")
+        print(f"Zawartość katalogu: {os.listdir(os.path.dirname(args.infile))}")
         validate_fasta(args.infile)
         input_fasta = args.infile
 
