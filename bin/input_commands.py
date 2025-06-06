@@ -304,28 +304,28 @@ def check_dependencies():
     #############
     # phanotate
     #############
-    try:
-        process = sp.Popen(
-            ["phanotate.py", "--version"], stdout=sp.PIPE, stderr=sp.STDOUT
-        )
-    except:
-        logger.error("Phanotate not found. Please reinstall pharokka.")
-    phan_out, _ = process.communicate()
-    phanotate_out = phan_out.decode().strip()
-    phanotate_major_version = int(phanotate_out.split(".")[0])
-    phanotate_minor_version = int(phanotate_out.split(".")[1])
-    phanotate_minorest_version = phanotate_out.split(".")[2]
+    # try:
+    #     process = sp.Popen(
+    #         ["phanotate.py", "--version"], stdout=sp.PIPE, stderr=sp.STDOUT
+    #     )
+    # except:
+    #     logger.error("Phanotate not found. Please reinstall pharokka.")
+    # phan_out, _ = process.communicate()
+    # phanotate_out = phan_out.decode().strip()
+    # phanotate_major_version = int(phanotate_out.split(".")[0])
+    # phanotate_minor_version = int(phanotate_out.split(".")[1])
+    # phanotate_minorest_version = phanotate_out.split(".")[2]
 
-    logger.info(
-        f"Phanotate version found is v{phanotate_major_version}.{phanotate_minor_version}.{phanotate_minorest_version}"
-    )
+    # logger.info(
+    #     f"Phanotate version found is v{phanotate_major_version}.{phanotate_minor_version}.{phanotate_minorest_version}"
+    # )
 
-    if phanotate_major_version < 1:
-        logger.error("Phanotate is too old - please reinstall pharokka.")
-    if phanotate_minor_version < 5:
-        logger.error("Phanotate is too old - please reinstall pharokka.")
+    # if phanotate_major_version < 1:
+    #     logger.error("Phanotate is too old - please reinstall pharokka.")
+    # if phanotate_minor_version < 5:
+    #     logger.error("Phanotate is too old - please reinstall pharokka.")
 
-    logger.info("Phanotate version is ok.")
+    # logger.info("Phanotate version is ok.")
 
     #############
     # mmseqs
